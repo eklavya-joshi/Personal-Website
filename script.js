@@ -45,5 +45,5 @@ function boxFourFlip() {
         box4.style.filter = "brightness(80%)";
         box4.style.animationDelay="0s";
         box4.style.animation="0.5s ease-in 0s 1 normal forwards running box-flip";
-        box4.outerHTML += '<div class="projects-box-four-flip"><a class="projects-screen-icons"><a class="projects-screen-download" href="downloads/website.zip"></a><a class="projects-screen-github" target="_blank" href="https://github.com/eklavya-joshi/Personal-Website"></a></div><div class="flip4">If you\'re reading this then you\'re using this project right now! You can download the source code or view it on Github.</div></div>';
+        box4.outerHTML += '<div class="projects-box-four-flip"><div class="projects-screen-icons"><a class="projects-screen-download" href="downloads/website.zip" download></a><a class="projects-screen-github" target="_blank" href="https://github.com/eklavya-joshi/Personal-Website"></a></div><div class="flip4">If you\'re reading this then you\'re using this project right now! You can download the source code or view it on Github.</div></div>';
 }

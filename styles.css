@@ -354,12 +354,12 @@ to {transform: scaleY(1);}
         width: 300px;
         height: 300px;
         border-radius: 20px;
-        box-shadow: 8px 8px;
+        box-shadow: 8px 8px black;
         position: absolute;
         left: 10%;
         top: 28%;
         transform: scale(0.95);
-        background-image: url(images/python_game.PNG);
+        background-image: url(images/unity.PNG);
         background-size:cover;
         background-origin: content-box;
         transition: all 1s;
@@ -369,7 +369,7 @@ to {transform: scaleY(1);}
 .projects-box-one-text{
         font-family: Uni Sans;
         font-size: 40px;
-        color: var(--color-text);
+        color: var(--color-secondary);
         width: 230px;
         text-align:center;
         opacity:0;
@@ -393,7 +393,7 @@ to {transform: scaleY(1);}
         width: 300px;
         height: 300px;
         border-radius: 20px;
-        box-shadow: 8px 8px;
+        box-shadow: 8px 8px black;
         position: absolute;
         left: 10%;
         top: 28%;
@@ -418,7 +418,7 @@ to {transform: scaleY(1);}
         width: 300px;
         height: 300px;
         border-radius: 20px;
-        box-shadow: 8px 8px;
+        box-shadow: 8px 8px black;
         position: absolute;
         left: 30%;
         top: 28%;
@@ -457,7 +457,7 @@ to {transform: scaleY(1);}
         width: 300px;
         height: 300px;
         border-radius: 20px;
-        box-shadow: 8px 8px;
+        box-shadow: 8px 8px black;
         position: absolute;
         left: 30%;
         top: 28%;
@@ -481,7 +481,7 @@ to {transform: scaleY(1);}
         width: 300px;
         height: 300px;
         border-radius: 20px;
-        box-shadow: 8px 8px;
+        box-shadow: 8px 8px black;
         position: absolute;
         left: 50%;
         top: 28%;
@@ -520,7 +520,7 @@ to {transform: scaleY(1);}
         width: 300px;
         height: 300px;
         border-radius: 20px;
-        box-shadow: 8px 8px;
+        box-shadow: 8px 8px black;
         position: absolute;
         left: 50%;
         top: 28%;
@@ -544,7 +544,7 @@ to {transform: scaleY(1);}
         width: 300px;
         height: 300px;
         border-radius: 20px;
-        box-shadow: 8px 8px;
+        box-shadow: 8px 8px black;
         position: absolute;
         left: 70%;
         top: 28%;
@@ -583,7 +583,7 @@ to {transform: scaleY(1);}
         width: 300px;
         height: 300px;
         border-radius: 20px;
-        box-shadow: 8px 8px;
+        box-shadow: 8px 8px black;
         position: absolute;
         left: 70%;
         top: 28%;
