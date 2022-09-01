@@ -1,0 +1,911 @@
+
+
+
+* { 
+        margin: 0; 
+        padding: 0; 
+        -moz-box-sizing: border-box; 
+        box-sizing: border-box; 
+        scroll-behavior: smooth; 
+        }
+    
+    html {
+        min-height: 100%;
+}
+
+@font-face{
+        font-family:Uni Sans; 
+        src: url(fonts/Uni\ Sans/Uni\ Sans\ Heavy.otf)
+      }
+@font-face{
+        font-family:Work Sans;
+        src: url(fonts/Work\ Sans/WorkSans-Light.otf)
+}
+
+:root {
+        --color-primary: #1A1A1D;
+        --color-secondary: #950740;
+        --color-three: #6F2232;
+        --color-four: #C3073F;
+        --color-text: rgb(255, 255, 255);
+        --color-subtext: rgb(207, 207, 207);
+
+        --box1-pos: 10%;
+        --box2-pos: 30%;
+        --box3-pos: 50%;
+        --box4-pos: 70%;
+}
+
+.name-screen-topleft {
+
+        position: absolute;
+        opacity: 0;
+        animation: name-text-fade 2s forwards;
+        animation-delay: 6s;
+}
+.name-screen-topleft-button{
+        background-color:transparent;
+        border:none;
+        border-color: var(--color-subtext);
+        border-bottom: 3px solid;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        color:var(--color-subtext);
+        width:100%;
+        height:30px;
+        font-size: 16px;
+        font-weight: bold;
+        position:absolute;
+        top:10px;
+        left:10px;
+        backface-visibility: hidden;
+        transition: border-color 2s, color 1s, transform 1s;
+        margin: 0px;
+}
+.name-screen-topleft:hover > .name-screen-topleft-gradient{
+        opacity: 1;
+        width: 100%;
+        left: 10px;
+}
+.name-screen-topleft:hover > .name-screen-topleft-button {
+        color: rgba(255, 255, 255, 0.7);
+        border-color: var(--color-secondary);
+        cursor:pointer;
+}
+.name-screen-topleft-gradient{
+        background-color:transparent;
+        border:none;
+        width:50%;
+        height:30px;
+        border-radius: 2px;
+        position:absolute;
+        top:10px;
+        left:33%;
+        margin: 0px;
+        background: linear-gradient(transparent, var(--color-secondary));
+        opacity: 0;
+        transition: opacity 1s, left 1s, width 1s, transform 1s;
+}
+.name-screen {
+        width:100%;
+        height: 750px;
+        background-color: var(--color-primary);
+        position:relative;
+}
+.name-screen-line {
+        width: 10px;
+        height: 100%;
+        background-color: var(--color-three);
+        position:absolute;
+        left:8%;
+        margin:0px;
+}
+.name-screen-line-dot {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--color-three);
+        position: absolute;
+        left: -19px;
+        top: 80px;
+}
+.name-screen-left-block {
+        width: 8%;
+        height: 100%;
+        background-color: var(--color-primary);
+        position:absolute;
+        left:0px;
+
+}
+.name-text-hi {
+        font-family: Uni Sans;
+        font-size: 120px;
+        color: var(--color-text);
+        position:absolute;
+        bottom:360px;
+        animation:name-text-move 2s forwards;
+}
+.name-text-im {
+        font-family: Uni Sans;
+        font-size: 120px;
+        color: var(--color-text);
+        position:absolute;
+        bottom:240px;
+        left: 10%;
+        transform: scaleY(0);
+        animation:name-text-grow 0.3s forwards;
+        animation-delay: 2.25s;
+}
+.name-text-name{
+        position:absolute;
+        color: var(--color-secondary);
+        margin-left: 20px;
+        transform: scaleY(0);
+        animation:name-text-flip 1s forwards;
+        animation-delay: 2.7s;
+        
+}
+.name-text-subtext {
+        font-family: Uni Sans;
+        font-size: 60px;
+        color: var(--color-subtext);
+        position:absolute;
+        left: calc(10% + 4px);
+        bottom: 20%;
+        opacity: 0;
+        animation: name-text-fade 2s forwards;
+        animation-delay: 4s;
+}
+.name-screen-divider {
+        width:100%;
+        height: 100px;
+        background-color: var(--color-secondary);
+}
+@keyframes name-text-move {
+        from {left: -50%;}
+        to {left: 10%;}
+      }
+@keyframes name-text-grow {
+from {transform: scaleY(0);}
+to {transform: scaleY(1);}
+        }
+@keyframes name-text-flip {
+        0% {transform: scaleY(0);}
+        20% {transform: scaleY(1);}
+        40% {transform: scaleY(0);}
+        60% {transform: scaleY(-1);}
+        80% {transform: scaleY(0);}
+        100% {transform: scaleY(1);}
+        }
+@keyframes name-text-fade {
+        from {opacity: 0;}
+        to {opacity: 1;}
+}
+.about-me-screen {
+        width:100%;
+        height: 550px;
+        background-color: var(--color-primary);
+        position:relative;
+}
+.about-me-header {
+        font-family: Uni Sans;
+        font-size: 120px;
+        color: var(--color-text);
+        position:absolute;
+        left: 10%;
+        width: 590px;
+}
+.about-me-underline {
+        width: 100%;
+        height: 10px;
+        position: absolute;
+        top: 130px;
+        background-color: var(--color-three);
+}
+.about-me-vert-line {
+        width: 10px;
+        height: 100%;
+        position: absolute;
+        left: 8%;
+        background-color: var(--color-three);
+}
+.about-me-paragraph {
+        font-family: Work Sans;
+        font-size: 30px;
+        letter-spacing: -1px;
+        color: var(--color-text);
+        width: 80%;
+        position:absolute;
+        left: 13%;
+        top: 30%;
+}
+.about-me-screen-divider {
+        width:100%;
+        height: 100px;
+        background-color: var(--color-secondary);
+}
+.projects-screen {
+        width:100%;
+        height: 750px;
+        background-color: var(--color-primary);
+        position:relative;
+}
+.projects-header {
+        font-family: Uni Sans;
+        font-size: 120px;
+        color: var(--color-text);
+        position:absolute;
+        top:40%;
+        left:calc(50% - 300px);
+        transition: all 1s;
+}
+.projects-screen-gradient-left {
+        width:25%;
+        height: 100%;
+        background: linear-gradient(to left, var(--color-primary), var(--color-secondary));
+        opacity: 0;
+        position:absolute;
+        left: 0px;
+        transition: all 2s;
+}
+.projects-screen-gradient-right {
+        width:25%;
+        height: 100%;
+        background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+        opacity: 0;
+        position:absolute;
+        right: 0px;
+        transition: all 2s;
+}
+.projects-screen-line-left {
+        width: 10px;
+        height: 100%;
+        position: absolute;
+        left: 8%;
+        background-color: var(--color-three);
+        transition: all 1.25s;
+}
+.projects-screen-line-right {
+        width: 10px;
+        height: 100%;
+        position: absolute;
+        right: 8%;
+        bottom: 0px;
+        background-color: var(--color-three);
+        transition: all 1.5s;
+}
+.projects-screen-line-top {
+        width: 100%;
+        height: 10px;
+        position: absolute;
+        top: 100px;
+        background-color: var(--color-three);
+        transition: all 1.25s;
+}
+.projects-screen-line-bottom {
+        width: 100%;
+        height: 10px;
+        position: absolute;
+        bottom: 100px;
+        right: 0px;
+        background-color: var(--color-three);
+        transition: all 1.5s;
+}
+.projects-screen:hover > .projects-screen-gradient-left {
+        opacity: 0.5
+}
+.projects-screen:hover > .projects-screen-gradient-right {
+        opacity: 0.5
+}
+.projects-screen:hover > .projects-screen-line-left {
+        height: 0%;
+}
+.projects-screen:hover > .projects-screen-line-right {
+        height: 0%;
+}
+.projects-screen:hover > .projects-screen-line-top {
+        width: 0%;
+}
+.projects-screen:hover > .projects-screen-line-bottom {
+        width: 0%;
+}
+.projects-screen:hover > .projects-header {
+        transform: scale(1.2);
+}
+.projects-screen:hover {
+        cursor:pointer;
+}
+.projects-sweep-one {
+        width: 000%;
+        height: 100%;
+        background-color: var(--color-secondary);
+        position:absolute;
+        animation: projects-sweep 0.4s linear forwards;
+}
+.projects-sweep-two {
+        width: 0%;
+        height: 100%;
+        background-color: var(--color-primary);
+        position:absolute;
+        animation: projects-sweep 0.5s linear forwards;
+        animation-delay:0.4s;
+}
+.projects-sweep-three {
+        width: 0%;
+        height: 100%;
+        background-color: var(--color-secondary);
+        position:absolute;
+        animation: projects-sweep 0.4s linear forwards;
+        animation-delay:0.9s;
+}
+.projects-sweep-four {
+        width: 0%;
+        height: 100%;
+        background-color: var(--color-primary);
+        position:absolute;
+        animation: projects-sweep 1.2s forwards;
+        animation-delay:1.3s;
+}
+@keyframes projects-sweep {
+        from {width: 0%;}
+        to {width: 100%;}
+}
+.projects-box-one {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        box-shadow: 8px 8px;
+        position: absolute;
+        left: 10%;
+        top: 28%;
+        transform: scale(0.95);
+        background-image: url(images/python_game.PNG);
+        background-size:cover;
+        background-origin: content-box;
+        transition: all 1s;
+        animation: projects-box-one 1.5s backwards;
+        animation-delay: 1.9s;
+}
+.projects-box-one-text{
+        font-family: Uni Sans;
+        font-size: 40px;
+        color: var(--color-text);
+        width: 230px;
+        text-align:center;
+        opacity:0;
+        position:absolute;
+        top:60px;
+        left:35px;
+        transition: all 1s;
+}
+.projects-box-one:hover {
+        outline:10px;
+        outline-color: var(--color-secondary);
+        filter:brightness(80%);
+        transform: scale(1);
+        cursor: pointer;
+}
+.projects-box-one:hover > .projects-box-one-text {
+        opacity:1;
+        cursor: pointer;
+}
+.projects-box-one-flip {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        box-shadow: 8px 8px;
+        position: absolute;
+        left: 10%;
+        top: 28%;
+        transform: scalex(0);
+        background-color: var(--color-three);
+        animation: box-unflip 0.5s forwards;
+        animation-timing-function: ease-out;
+        animation-delay: 0.5s;
+}
+.flip1 {
+        font-family: Work Sans;
+        font-size: 18px;
+        color: var(--color-text);
+        width: 250px;
+        text-align: justify;
+        position:absolute;
+        top:20px;
+        left:25px;
+}
+
+.projects-box-two {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        box-shadow: 8px 8px;
+        position: absolute;
+        left: 30%;
+        top: 28%;
+        transform: scale(0.95);
+        background-image: url(images/python_game.PNG);
+        background-size:cover;
+        background-origin: content-box;
+        transition: all 1s;
+        animation: projects-box-two 1.5s backwards;
+        animation-delay: 1.7s;
+}
+.projects-box-two-text{
+        font-family: Uni Sans;
+        font-size: 40px;
+        color: var(--color-secondary);
+        width: 230px;
+        text-align:center;
+        opacity:0;
+        position:absolute;
+        top:60px;
+        left:35px;
+        transition: all 1s;
+}
+.projects-box-two:hover {
+        outline:10px;
+        outline-color: var(--color-secondary);
+        filter:brightness(80%);
+        transform: scale(1);
+        cursor: pointer;
+}
+.projects-box-two:hover > .projects-box-two-text {
+        opacity:1;
+        cursor: pointer;
+}
+.projects-box-two-flip {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        box-shadow: 8px 8px;
+        position: absolute;
+        left: 30%;
+        top: 28%;
+        transform: scalex(0);
+        background-color: var(--color-three);
+        animation: box-unflip 0.5s forwards;
+        animation-timing-function: ease-out;
+        animation-delay: 0.5s;
+}
+.flip2 {
+        font-family: Work Sans;
+        font-size: 18px;
+        color: var(--color-text);
+        width: 250px;
+        text-align: justify;
+        position:absolute;
+        top:20px;
+        left:25px;
+}
+.projects-box-three {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        box-shadow: 8px 8px;
+        position: absolute;
+        left: 50%;
+        top: 28%;
+        transform: scale(0.95);
+        background-image: url(images/pathfinder.PNG);
+        background-size:cover;
+        background-origin: content-box;
+        transition: all 1s;
+        animation: projects-box-three 1.5s backwards;
+        animation-delay: 1.5s;
+}
+.projects-box-three-text{
+        font-family: Uni Sans;
+        font-size: 40px;
+        color: var(--color-text);
+        width: 230px;
+        text-align:center;
+        opacity:0;
+        position:absolute;
+        top:60px;
+        left:30px;
+        transition: all 1s;
+}
+.projects-box-three:hover {
+        outline:10px;
+        outline-color: var(--color-secondary);
+        filter:brightness(80%);
+        transform: scale(1);
+        cursor: pointer;
+}
+.projects-box-three:hover > .projects-box-three-text {
+        opacity:1;
+        cursor: pointer;
+}
+.projects-box-three-flip {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        box-shadow: 8px 8px;
+        position: absolute;
+        left: 50%;
+        top: 28%;
+        transform: scalex(0);
+        background-color: var(--color-three);
+        animation: box-unflip 0.5s forwards;
+        animation-timing-function: ease-out;
+        animation-delay: 0.5s;
+}
+.flip3 {
+        font-family: Work Sans;
+        font-size: 18px;
+        color: var(--color-text);
+        width: 250px;
+        text-align: justify;
+        position:absolute;
+        top:20px;
+        left:25px;
+}
+.projects-box-four {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        box-shadow: 8px 8px;
+        position: absolute;
+        left: 70%;
+        top: 28%;
+        transform: scale(0.95);
+        background-image: url(images/website.PNG);
+        background-size:cover;
+        background-origin: content-box;
+        transition: all 1s;
+        animation: projects-box-four 1.5s backwards;
+        animation-delay: 1.3s;
+}
+.projects-box-four-text{
+        font-family: Uni Sans;
+        font-size: 40px;
+        color: var(--color-text);
+        width: 230px;
+        text-align:center;
+        opacity:0;
+        position:absolute;
+        top:60px;
+        left:35px;
+        transition: all 1s;
+}
+.projects-box-four:hover {
+        outline:10px;
+        outline-color: var(--color-secondary);
+        filter:brightness(80%);
+        transform: scale(1);
+        cursor: pointer;
+}
+.projects-box-four:hover > .projects-box-four-text {
+        opacity:1;
+        cursor: pointer;
+}
+.projects-box-four-flip {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        box-shadow: 8px 8px;
+        position: absolute;
+        left: 70%;
+        top: 28%;
+        transform: scalex(0);
+        background-color: var(--color-three);
+        animation: box-unflip 0.5s forwards;
+        animation-timing-function: ease-out;
+        animation-delay: 0.5s;
+}
+.flip4 {
+        font-family: Work Sans;
+        font-size: 18px;
+        color: var(--color-text);
+        width: 250px;
+        text-align: justify;
+        position:absolute;
+        top:20px;
+        left:25px;
+}
+.projects-screen-icons{
+        width:250px;
+        position:absolute;
+        left: 12.5%;
+        bottom: 5%;
+}
+
+.projects-screen-download {
+        width:72px;
+        height:72px;
+        position:absolute;
+        left: calc(10px);
+        bottom: 20%;
+        background-image: url(images/download.png);
+        filter: invert(8%) sepia(7%) saturate(711%) hue-rotate(201deg) brightness(95%) contrast(94%);
+        background-size:72px;
+        transition: all 1s;
+}
+.projects-screen-download:hover {
+        transform:scale(1.1);
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+.projects-screen-github {
+        width:72px;
+        height:72px;
+        position:absolute;
+        left: calc(100% - 96px - 10px);
+        bottom: 20%;
+        background-image: url(images/github.png);
+        filter: invert(8%) sepia(7%) saturate(711%) hue-rotate(201deg) brightness(95%) contrast(94%);
+        background-size:72px;
+        transition: all 1s;
+}
+.projects-screen-github:hover {
+        transform:scale(1.1);
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+@keyframes projects-box-one {
+        from{left: -70%; transform:scale(-1, 0.95);}
+        to {left: var(--box1-pos); transform:scaleX(0.95, 0.95);}
+}
+@keyframes projects-box-two {
+        from{left: -60%; transform:scale(-1, 0.95);}
+        to {left: var(--box2-pos); transform:scaleX(0.95, 0.95);}
+}
+@keyframes projects-box-three {
+        from{left: -50%; transform:scale(-1, 0.95);}
+        to {left: var(--box3-pos); transform:scaleX(0.95, 0.95);}
+}
+@keyframes projects-box-four {
+        from{left: -40%; transform:scale(-1, 0.95);}
+        to {left: var(--box4-pos); transform:scaleX(0.95, 0.95);}
+}
+
+@keyframes projects-box-left-small {
+        from{left: -60%; transform:scale(-1, 0.95);}
+        to {left: 5%; transform:scaleX(0.95, 0.95);}
+}
+@keyframes projects-box-right-small {
+        from{right: -60%; transform:scale(-1, 0.95);}
+        to {right: 5%; transform:scaleX(0.95, 0.95);}
+}
+@keyframes box-flip {
+        from{transform: scaleX(1);}
+        to{transform: scaleX(0);}
+}
+@keyframes box-unflip {
+        from{transform: scaleX(0);}
+        to{transform:scaleX(1);}
+}
+.projects-screen-divider {
+        width:100%;
+        height: 100px;
+        background-color: var(--color-secondary);
+}
+.contact-me-screen {
+        width:100%;
+        height: 650px;
+        background-color: var(--color-primary);
+        position:relative;
+}
+.contact-me-screen-line-left {
+        width: 10px;
+        height: 100%;
+        position: absolute;
+        left: 8%;
+        background-color: var(--color-three);
+}
+.contact-me-screen-line-right {
+        width: 10px;
+        height: 100%;
+        position: absolute;
+        right: 8%;
+        bottom: 0px;
+        background-color: var(--color-three);
+}
+.contact-me-screen-line-top {
+        width: 100%;
+        height: 10px;
+        position: absolute;
+        top: 100px;
+        background-color: var(--color-three);
+}
+.contact-me-screen-line-bottom {
+        width: 100%;
+        height: 10px;
+        position: absolute;
+        bottom: 100px;
+        right: 0px;
+        background-color: var(--color-three);
+}
+.contact-me-screen-line-mid-vert {
+        width: 10px;
+        height: calc(100% - 100px);
+        position: absolute;
+        right: calc(50% - 5px);
+        bottom: 0px;
+        background-color: var(--color-three);
+}
+.contact-me-screen-line-mid-hori {
+        width: 50%;
+        height: 10px;
+        position: absolute;
+        top: calc(43% - 5px);
+        background-color: var(--color-three);
+}
+.contact-me-screen-line-field-div {
+        width: 10px;
+        height: 26%;
+        position: absolute;
+        right: calc(71.5% - 5px);
+        top: 16.7%;
+        background-color: var(--color-three);
+}
+.contact-me-header {
+        font-family: Uni Sans;
+        font-size: 670%;
+        color: var(--color-text);
+        position:absolute;
+        left: 10%;
+        top:-2%;
+        width: 650px;
+}
+.contact-me-name-text {
+        font-family: Uni Sans;
+        font-size: 50px;
+        color: var(--color-text);
+        position:absolute;
+        left: 8%;
+        top:calc(10% + 40px);
+        width: 21.5%;
+        text-align:center;
+        background-color: var(--color-three);
+}
+.contact-me-email-text {
+        font-family: Uni Sans;
+        font-size: 50px;
+        color: var(--color-text);
+        position:absolute;
+        left: 28.5%;
+        top:calc(10% + 40px);
+        width: 21.5%;
+        text-align:center;
+        background-color: var(--color-three);
+}
+.contact-me-wip {
+        font-family: Uni Sans;
+        font-size: 48px;
+        color: var(--color-text);
+        text-align: center;
+        padding: 20px 0;
+        width: 1000px;
+        height:100px;
+        background-color: var(--color-secondary);
+        position:absolute;
+        top: 50%;
+}
+.contact-me-paragraph-text{
+        font-family: Work Sans;
+        font-size: 27px;
+        width: 35%;
+        text-align: justify;
+        letter-spacing: -1px;
+        color: var(--color-text);
+        position:absolute;
+        right: 12%;
+        top: 22%;
+}
+.contact-me-icons{
+        width:41%;
+        position:absolute;
+        bottom: 20%;
+        right:8.5%;
+}
+.contact-me-email {
+        width:96px;
+        height:96px;
+        position:absolute;
+        left: calc(0% + 5px);
+        bottom: 20%;
+        background-image: url(images/email.png);
+        filter: invert(18%) sepia(13%) saturate(6481%) hue-rotate(314deg) brightness(91%) contrast(94%);
+        background-size:96px;
+}
+.contact-me-email:hover {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+.contact-me-linkedin {
+        width:96px;
+        height:96px;
+        position:absolute;
+        left: calc(50% - 51px);
+        bottom: 20%;
+        background-image: url(images/linkedin.png);
+        filter: invert(18%) sepia(13%) saturate(6481%) hue-rotate(314deg) brightness(91%) contrast(94%);
+        background-size:96px;
+}
+.contact-me-linkedin:hover {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+.contact-me-github {
+        width:96px;
+        height:96px;
+        position:absolute;
+        left: calc(100% - 96px - 10px);
+        bottom: 20%;
+        background-image: url(images/github.png);
+        filter: invert(18%) sepia(13%) saturate(6481%) hue-rotate(314deg) brightness(91%) contrast(94%);
+        background-size:96px;
+}
+.contact-me-github:hover {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+@media all and (max-height: 500px) {
+        .name-text-subtext{
+            bottom: 100px;
+        }
+    }
+@media all and (max-width: 1300px) {
+.name-text-subtext{
+        bottom: 10%;
+        width: 600px;
+        resize: none;
+}
+
+}
+@media all and (max-width: 1350px) {
+.about-me-screen {
+        height: 800px;
+}
+@media all and (max-width: 1400px) {
+        .projects-box-one {
+                top: 8%;
+                left: 5%;
+                animation: projects-box-left-small 1.5s backwards;
+                animation-delay: 1.3s;
+        }
+        .projects-box-two {
+                top: 8%;
+                left:initial;
+                right: 5%;
+                animation: projects-box-right-small 1.5s backwards;
+                animation-delay: 1.3s;
+        }
+        .projects-box-three {
+                top: 56%;
+                left: 5%;
+                animation: projects-box-left-small 1.5s backwards;
+                animation-delay: 1.3s;
+        }
+        .projects-box-four {
+                top: 56%;
+                left:initial;
+                right: 5%;
+                animation: projects-box-right-small 1.5s backwards;
+                animation-delay: 1.3s;
+        }
+        .projects-box-one-flip {
+                top: 8%;
+                left: 5%;
+        }
+        .projects-box-two-flip {
+                top: 8%;
+                left:initial;
+                right: 5%;
+        }
+        .projects-box-three-flip {
+                top: 56%;
+                left: 5%;
+        }
+        .projects-box-four-flip {
+                top: 56%;
+                left:initial;
+                right: 5%;
+        }
+}
+.about-me-paragraph {
+        font-family: Work Sans;
+        font-size: 30px;
+        letter-spacing: -1px;
+        color: var(--color-text);
+        position:absolute;
+        left: 13%;
+        top: 25%;
+}
+}
